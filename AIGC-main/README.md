@@ -1,4 +1,3 @@
-
 # AIGC帮写绘
 
 ## 技术栈
@@ -18,8 +17,4 @@ scp -i bangxiehui-wb.pem -r dist ubuntu@71.137.1.162:/home/ubuntu/bangxiehui/ngi
 
 
 
-
-=======
-# getcreate-web
-getcreate web页面
 
