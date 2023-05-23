@@ -36,6 +36,9 @@
         />
       </div>
     </div>
+
+    
+     <!-- 图片 -->
     <div class="generatePicture" >
       <masonry-image
         class="masonry-image"
@@ -77,6 +80,8 @@ onMounted(async () => {
   //获取生成的历史图片
   generateImageList = await getHistoryImage({ mainId, type: "DESIGN", category: "GENERATE" })
   if (generateImageList.length) focusImageUrl = generateImageList[0].content.url;
+
+
 
   //获取选择的历史图片
   const selectedImageList_ = await getHistoryImage({ mainId, type: "DESIGN", category: "SELECTED" })
