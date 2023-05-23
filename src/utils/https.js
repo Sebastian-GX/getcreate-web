@@ -29,7 +29,7 @@ service.interceptors.request.use((config) => {
 
 // 返回响应数据拦截
 service.interceptors.response.use((res) => {
-  console.log("res", res);
+  // console.log("res", res);
   const { status, data } = res;
   if (status === 200) {
     return Promise.resolve(data);

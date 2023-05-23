@@ -1,10 +1,11 @@
 <template>
   <div class="masonryImage">
     <!-- 进度条 -->
-    <div class="demo-progress">
+    <!-- <div class="demo-progress">
       <el-progress :text-inside="true" :stroke-width="18" :percentage="10" />
-    </div>
-    <div v-masonry transition-duration="0" item-selector=".item">
+    </div> -->
+
+    <div v-if="dwg" v-masonry transition-duration="0" item-selector=".item">
       <div class="item" :style="imgStyle" v-masonry-tile v-for="(item, index) in imageBlocks" :key="index">
         <img v-if="item.id !== -1" :src="item.content.url" @click="selectImage(item)">
         <p v-if="showInfo" :style="{ width: imgStyle.width }">
@@ -13,13 +14,26 @@
         </p>
       </div>
     </div>
-    <button @click="ons()">dfd</button>
+
+    <div v-else="dwg" v-masonry transition-duration="0" item-selector=".item">
+      <div class="item " :style="imgStyle" v-masonry-tile v-for="(item, index) in num" :key="index">
+          <img :src="imgs" alt="">
+          <!-- <div class="demo-progress"> -->
+            <!-- 进度条 -->
+            <el-progress class="one" :stroke-width="8" :percentage="schedule" />
+          <!-- </div> -->
+
+      </div>
+
+    </div>
   </div>
 </template>
 <script setup>
-import { defineEmits, defineProps, ref } from 'vue';
-
+import { defineEmits, defineProps, ref, onMounted } from 'vue';
+// /接口
+// import { getHistoryPrompt, getHistoryImage, getStudioProjectID, getStudioProjectResult } from "../../api/project";
 const emit = defineEmits(['selectImage'])
+
 const props = defineProps({
   imageBlocks: Array,
   imgStyle: Object,
@@ -28,12 +42,32 @@ const props = defineProps({
     default: false,
   }
 });
+
+
+
+
+let dwg = ref(false)
+let num = ref()
+setTimeout(() => {
+  num.value = props.imageBlocks.length
+  console.log(num.value)
+}, 200)
+setTimeout(() => {
+  dwg.value = true
+}, 2000)
 ////////////////////////////////////////////////////////////////
 const imgs = ref('https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1683209105.9191358.png')
-console.log(props.imageBlocks.length)
+const consts = ref(false)
 
+// 进度条
+const schedule = ref(0)
+setInterval(() => {
+  if (schedule.value < 100) {
+    schedule.value += 20
+    console.log(schedule.value)
+  }
 
-///////////////////////////////////////////////////////////////
+}, 100)
 
 
 
@@ -45,8 +79,16 @@ const selectImage = (item) => {
 // 进度条
 .demo-progress .el-progress--line {
   margin-bottom: 15px;
-  width: 350px;
 }
+
+.one {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  top : 50%;
+  left: 10%;
+}
+
 
 
 div.masonryImage {
