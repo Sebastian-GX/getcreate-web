@@ -18,7 +18,6 @@ const props = defineProps({
   imageUrl: String
 });
 
-console.log(props.imageUrl)
 const imageEditor = ref(null);
 const initImageEditor = () => {
   const options = {

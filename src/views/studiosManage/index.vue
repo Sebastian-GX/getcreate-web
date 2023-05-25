@@ -80,10 +80,16 @@ const handleFileUpload = ({ file }) => {
     userStore.setAvatarUrl(avatarUrl);
   })
 }
+
+    
+const ee = ref('../../views/home/page/imageConfig.json')
+console.log(ee)
+
+
 </script>
 <style lang="scss" scoped>
 .content {
-  background: url(../../assets/img/pocket-background.jpg) no-repeat;
+  background: url(https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/datanew/trend/Images/e45bd31d869c6baf76f909f6ca748a8b.png) no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
