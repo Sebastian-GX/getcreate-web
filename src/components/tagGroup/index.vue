@@ -38,7 +38,7 @@ div.tagGroup {
     color: #cccccc;
     cursor: pointer;
     &.active {
-      background: #A19D9D;
+      // background: #A19D9D;
       color: #FFFFFF;
     }
   }

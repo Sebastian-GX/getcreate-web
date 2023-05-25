@@ -21,8 +21,6 @@ import Avatar from "@/components/avatar/index.vue";
 import { useMainStore } from "../../../stores/pocket.js";
 const userStore = useMainStore();
 
-console.log(userStore)
-
 
 const router = useRouter();
 const dumpHome = () => {

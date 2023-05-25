@@ -41,9 +41,7 @@ import { useUserStore } from "../../stores/user";
 const userStore = useUserStore();
 
 const activeQueryTypes = (item) => {
-  console.log(item)
   activeQueryType = item.value
-  console.log(item.value)
   userStores.increment(item.name)
 }
 

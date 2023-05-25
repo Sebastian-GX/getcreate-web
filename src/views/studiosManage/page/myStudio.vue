@@ -27,8 +27,8 @@ import { getMyStudioProject } from "@/api/project";
 const tagValue = "untitledStudio"
 const tagList = [
   { name: "未命名口袋", value: "untitledStudio" },
-  { name: "测试口袋", value: "testStudio" },
-  { name: "成功口袋", value: "successStudio" },
+  // { name: "测试口袋", value: "testStudio" },
+  // { name: "成功口袋", value: "successStudio" },
 ]
 const handleChangeTag = (value) => {
   console.log(value);
