@@ -21,4 +21,4 @@ scp -i bangxiehui-wb.pem -r dist ubuntu@71.137.1.162:/home/ubuntu/bangxiehui/ngi
 
 =======
 # getcreate-web
-getcreate web页面
+getcreate web
