@@ -1,8 +1,11 @@
 <template>
   <div class="header">
     <div class="left">
+      
       <span class="iconfont icon-shouye" @click="dumpHome"></span>
       <slot name="extraLeft"></slot>
+      <span>{{ userStore.count }}</span>
+      
     </div>
     <div class="right">
       <el-badge :value="0" class="item">
@@ -14,6 +17,12 @@
 </template>
 <script setup>
 import Avatar from "@/components/avatar/index.vue";
+// paina
+import { useMainStore } from "../../../stores/pocket.js";
+const userStore = useMainStore();
+
+console.log(userStore)
+
 
 const router = useRouter();
 const dumpHome = () => {

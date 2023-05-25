@@ -18,12 +18,13 @@ const props = defineProps({
   imageUrl: String
 });
 
+console.log(props.imageUrl)
 const imageEditor = ref(null);
 const initImageEditor = () => {
   const options = {
     includeUI: {
       loadImage: {
-        path: props.imageUrl,
+        path: 'https://xiuxiupro-material-center.meitudata.com/poster/8c98b88845630b4afc694e90ca81daa2.png',
         name: "image",
       },
       menu: ["resize", "crop", "flip", "rotate", "draw", "shape", "icon", "text", "filter"], // 底部菜单按钮列表 遮罩mask
@@ -37,9 +38,9 @@ const initImageEditor = () => {
   };
   imageEditor.value = new ImageEditor('#tui-image-editor', options);
 
-  document.getElementsByClassName("tui-image-editor-main")[0].style.top ="45px"; // 调整图片显示位置
-  document.getElementsByClassName("tie-btn-reset tui-image-editor-item help") [0].style.display = "none";  // 隐藏顶部重置按钮
-  document.getElementsByClassName( "tui-image-editor-controls")[0].style.backgroundColor = "#fff";  //底部按钮栏背景颜色
+  document.getElementsByClassName("tui-image-editor-main")[0].style.top = "45px"; // 调整图片显示位置
+  document.getElementsByClassName("tie-btn-reset tui-image-editor-item help")[0].style.display = "none";  // 隐藏顶部重置按钮
+  document.getElementsByClassName("tui-image-editor-controls")[0].style.backgroundColor = "#fff";  //底部按钮栏背景颜色
 
   /* 对一些不需要的按钮进行样式隐藏*/
   document.querySelector('[tooltip-content="反撤销"]').style.display = "none";
@@ -89,16 +90,19 @@ const save = () => {
   width: 880px;
   margin: 0 auto;
   position: relative;
+
   .reset {
     position: absolute;
     right: 164px;
     top: 15px;
   }
+
   .save {
     position: absolute;
     right: 50px;
     top: 15px;
   }
+
   .download {
     position: absolute;
     right: 108px;

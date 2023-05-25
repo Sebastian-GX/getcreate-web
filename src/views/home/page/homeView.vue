@@ -54,6 +54,7 @@ import { useUserStore } from "@/stores/user";
 let prompt = $ref("穿着黑色毛衣的精致优雅女性");
 let createDialogVisible = ref(false);
 const createBtnClick = () => {
+  console.log('点击')
   createDialogVisible.value = true;
 }
 

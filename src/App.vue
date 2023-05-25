@@ -1,6 +1,7 @@
 <template>
   <div class="baseViews">
     <router-view></router-view>
+    
   </div>
 </template>
 <script setup>

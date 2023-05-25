@@ -15,13 +15,12 @@
       </div>
     </div>
 
-    <div v-else="dwg" v-masonry transition-duration="0" item-selector=".item">
-      <div class="item " :style="imgStyle" v-masonry-tile v-for="(item, index) in num" :key="index">
-          <img :src="imgs" alt="">
-          <!-- <div class="demo-progress"> -->
-            <!-- 进度条 -->
-            <el-progress class="one" :stroke-width="8" :percentage="schedule" />
-          <!-- </div> -->
+    <div v-else v-masonry transition-duration="0" item-selector=".item">
+      <div class="item" :style="imgStyle" v-masonry-tile v-for="(itemss, index) in num" :key="index">
+        <img class="ond" src="../../assets/img/background.jpg" alt="">
+        <!-- 进度条 -->
+        <el-progress class="one" :stroke-width="8" :percentage="schedule" />
+        <!-- </div> -->
 
       </div>
 
@@ -29,7 +28,7 @@
   </div>
 </template>
 <script setup>
-import { defineEmits, defineProps, ref, onMounted } from 'vue';
+import { defineEmits, defineProps, ref } from 'vue';
 // /接口
 // import { getHistoryPrompt, getHistoryImage, getStudioProjectID, getStudioProjectResult } from "../../api/project";
 const emit = defineEmits(['selectImage'])
@@ -50,24 +49,23 @@ let dwg = ref(false)
 let num = ref()
 setTimeout(() => {
   num.value = props.imageBlocks.length
-  console.log(num.value)
-}, 200)
-setTimeout(() => {
-  dwg.value = true
-}, 2000)
-////////////////////////////////////////////////////////////////
-const imgs = ref('https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1683209105.9191358.png')
+  setInterval(() => {
+    if (schedule.value < 100) {
+      schedule.value += 20
+    }
+  }, 100)
+  setTimeout(() => {
+    dwg.value = true
+  }, 2000)
+}, 500)
+
+
+// const imgs = ref('../../assets/img/background.jpg')
 const consts = ref(false)
 
 // 进度条
 const schedule = ref(0)
-setInterval(() => {
-  if (schedule.value < 100) {
-    schedule.value += 20
-    console.log(schedule.value)
-  }
 
-}, 100)
 
 
 
@@ -76,6 +74,11 @@ const selectImage = (item) => {
 }
 </script>
 <style lang="scss" scoped>
+.ond {
+  // width: 100%;
+  height: 200px;
+}
+
 // 进度条
 .demo-progress .el-progress--line {
   margin-bottom: 15px;
@@ -85,7 +88,7 @@ const selectImage = (item) => {
   width: 80%;
   margin: 0 auto;
   position: absolute;
-  top : 50%;
+  top: 50%;
   left: 10%;
 }
 

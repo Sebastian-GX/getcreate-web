@@ -1,19 +1,13 @@
 <template>
   <div class="studiosManage">
+    <!-- 456 -->
     <my-header></my-header>
+
     <div class="content">
       <div class="Heads">
-        <el-avatar
-          :size="120"
-          :src="userStore.userInfo.avatarPath"
-        />
-        <el-upload
-          class="avatar-uploader"
-          action=""
-          :show-file-list="false"
-          :before-upload="handleBeforeUpload"
-          :http-request="handleFileUpload"
-        >
+        <el-avatar :size="120" :src="userStore.userInfo.avatarPath" />
+        <el-upload class="avatar-uploader" action="" :show-file-list="false" :before-upload="handleBeforeUpload"
+          :http-request="handleFileUpload">
           <div class="upload"></div>
         </el-upload>
       </div>
@@ -21,12 +15,8 @@
         <span>test</span>
       </p>
       <ul class="tab">
-        <li
-          :class="{active: item.value === activeQueryType}"
-          v-for="item in queryTypeList"
-          :key="item.value"
-          @click="activeQueryType = item.value"
-        >{{ item.name }}</li>
+        <li :class="{ active: item.value === activeQueryType }" v-for="item in queryTypeList" :key="item.value"
+          @click="activeQueryTypes(item)">{{ item.name }}</li>
       </ul>
       <div class="contentArea">
         <KeepAlive>
@@ -43,8 +33,20 @@ import CollectStudio from "./page/collectStudio.vue";
 import MyStyle from "./page/myStyle.vue"
 import { ElMessage } from 'element-plus';
 import { uploadUserAvatar } from "@/api/user";
+// paina
+import { useMainStore } from "../.././stores/pocket.js";
+const userStores = useMainStore();
+
 import { useUserStore } from "../../stores/user";
 const userStore = useUserStore();
+
+const activeQueryTypes = (item) => {
+  console.log(item)
+  activeQueryType = item.value
+  console.log(item.value)
+  userStores.increment(item.name)
+}
+
 
 const tabs = {
   MINE: MyStudio,
@@ -74,7 +76,7 @@ const handleBeforeUpload = (file) => {
 }
 
 //更新头像
-const handleFileUpload = ({file}) => {
+const handleFileUpload = ({ file }) => {
   uploadUserAvatar({ avatar: file }).then(res => {
     const { avatarUrl } = res;
     userStore.setAvatarUrl(avatarUrl);
@@ -82,28 +84,40 @@ const handleFileUpload = ({file}) => {
 }
 </script>
 <style lang="scss" scoped>
+.content {
+  background: url(../../assets/img/pocket-background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 div.studiosManage {
   width: 100%;
   height: 100%;
   background: #292929;
+
   >div.content {
     width: 100%;
     height: calc(100% - 83px);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
     div.Heads {
       width: 120px;
       height: 120px;
       margin: 0 auto;
       margin-top: 20px;
       position: relative;
+
       .avatar-uploader {
         width: 120px;
         height: 120px;
         position: absolute;
         left: 0;
         top: 0;
+
         div.upload {
           width: 120px;
           height: 120px;
@@ -111,6 +125,7 @@ div.studiosManage {
         }
       }
     }
+
     p.author {
       height: 20px;
       line-height: 20px;
@@ -118,6 +133,7 @@ div.studiosManage {
       margin-top: 20px;
       color: #fff;
     }
+
     ul.tab {
       width: 280px;
       height: 20px;
@@ -127,22 +143,28 @@ div.studiosManage {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       li {
         text-align: center;
         flex-basis: 100px;
         color: #fff;
         cursor: pointer;
+
         &:first-child {
           text-align: left;
         }
+
         &:last-child {
           text-align: right;
         }
+
         &.active {
-          color: red;
+          // color: red;
+          text-decoration: underline;
         }
       }
     }
+
     .contentArea {
       width: 1440px;
       flex: 1;

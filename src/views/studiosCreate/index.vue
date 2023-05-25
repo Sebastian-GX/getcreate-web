@@ -40,7 +40,7 @@
   </div>
 </template>
 <script setup>
-import MyHeader from "./page/header.vue"
+import MyHeader from "./page/.vue"
 import DesigningScheme from './page/designingScheme.vue'
 import LineDrawingGeneration  from './page/lineDrawingGeneration.vue'
 import DesignInspiration  from './page/designInspiration.vue'
