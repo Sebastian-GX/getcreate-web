@@ -57,7 +57,7 @@ const input4 = ref('')
 
 
 // 点击创造
-let prompt = ref("穿着黑色毛衣的精致优雅女性")
+let prompt = ref("波西米亚风格")
 let createDialogVisible = ref(false);
 const Create = ()=>  {
   console.log('你点击了 Create')

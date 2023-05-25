@@ -51,7 +51,7 @@ import { getStudioList } from "@/api/home";
 import { useUserStore } from "@/stores/user";
 
 //创建新项目相关
-let prompt = $ref("穿着黑色毛衣的精致优雅女性");
+let prompt = $ref("波西米亚风格");
 let createDialogVisible = ref(false);
 const createBtnClick = () => {
   console.log('点击')
