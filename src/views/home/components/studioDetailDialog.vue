@@ -14,7 +14,7 @@
             黑色将成为席卷核心及时尚单品的关键色彩，采用包括黑色调与法式海军蓝在内的核心色调搭配神秘的鸭青色与午夜粽，结合不同肌理及光泽的材质，在丰富视觉层次的同时易于搭配。另外，全黑色造型及暗色的印花值得关注。棕色系作为该调色盘的底色，顺应复古美学。智能蓝与橙色的组合可用于日常搭配，小面积的酸橙色色块可用于造型点缀，也可以考虑运用在印花中。该色盘尤其适用于年轻与运动市场。
           </div>
           <div class="author">
-            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+            <el-avatar src="https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1685258312.921318.png" />
             <span class="authorName">stephenlee</span>
             <div class="attention">
               <span class="iconfont icon-shoucang1"></span>
@@ -25,7 +25,7 @@
             <ul class="comment_inner">
               <li>
                 <div class="message_">
-                  <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                  <el-avatar src="https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1682418237.5555916.png" />
                   <span>这幅图片是我精心制作表达对黑色外套的设计</span>
                 </div>
                 <div class="operate_">
@@ -39,11 +39,12 @@
                 <ul class="son_comment_inner">
                   <li>
                     <div>
-                      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                      <el-avatar src="https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1685257937.3050828.png" />
                       <span>这幅图片是我精心制作表达对黑色外套的设计</span>
                     </div>
                     <div class="a">
-                      <img class="big" src="http://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/assets/IMG_0721.PNG" alt="">
+                      <!-- <el-avatar src="https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/gen/image_sd_1685257937.3050828.png" /> -->
+                      <img class="big" src="https://bucket-bangxiehui-1.oss-cn-beijing.aliyuncs.com/upload/s9g6d2nk/%E6%88%AA%E5%B1%8F2023-05-08%2019.58.35.png" alt="">
                     </div>
                     <div class="a">
                       <span>回复</span>
@@ -94,6 +95,10 @@ const selectImage = () => {
 }
 </script>
 <style lang="scss" scoped>
+.big {
+  border-radius: 20px;
+  margin: 15px;
+}
 div.studioDetail {
   ::v-deep {
     .el-dialog {

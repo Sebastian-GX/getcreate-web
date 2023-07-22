@@ -5,7 +5,8 @@
       <el-progress :text-inside="true" :stroke-width="18" :percentage="10" />
     </div> -->
 
-    <div v-if="dwg" v-masonry transition-duration="0" item-selector=".item">
+    <div v-if="dwg" v-masonry transition-duration="0" item-selector=".item" style="display: flex;
+  justify-content: space-between;">
       <div class="item" :style="imgStyle" v-masonry-tile v-for="(item, index) in imageBlocks" :key="index">
         <img v-if="item.id !== -1" :src="item.content.url" @click="selectImage(item)">
         <p v-if="showInfo" :style="{ width: imgStyle.width }">
@@ -60,7 +61,6 @@ setTimeout(() => {
 }, 500)
 
 
-// const imgs = ref('../../assets/img/background.jpg')
 const consts = ref(false)
 
 // 进度条
@@ -75,7 +75,6 @@ const selectImage = (item) => {
 </script>
 <style lang="scss" scoped>
 .ond {
-  // width: 100%;
   height: 200px;
 }
 

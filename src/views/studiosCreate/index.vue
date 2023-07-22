@@ -40,7 +40,7 @@
   </div>
 </template>
 <script setup>
-import MyHeader from "./page/.vue"
+import MyHeader from "./page/header.vue"
 import DesigningScheme from './page/designingScheme.vue'
 import LineDrawingGeneration  from './page/lineDrawingGeneration.vue'
 import DesignInspiration  from './page/designInspiration.vue'
@@ -72,7 +72,7 @@ const handleClickMenu = (item) => {
 let editImageDialogVisible = ref(false);
 let editImageDialogUrl = ref("");
 const handleEditImage = (item) => {
-  const { id, focusImageUrl } = item;
+  const { focusImageUrl } = item;
   editImageDialogUrl.value = focusImageUrl;
   editImageDialogVisible.value = true;
 }

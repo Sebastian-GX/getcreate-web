@@ -2,7 +2,7 @@
 <template>
   <div class="bxo">
     <div v-for="item in 2" :key="item" class="box">
-      <img :src="props.data[0].imgList[item - 1].url" @click="detailBtnClick(props.data[0].imgList[item - 1])" alt="">
+      <img class="imagess" :src="props.data[0].imgList[item - 1].url" @click="detailBtnClick(props.data[0].imgList[item - 1])" alt="">
       <div>
         {{ props.data[0].imgList[item - 1].title }}
       </div>
@@ -36,6 +36,10 @@ const detailBtnClick = (item) => {
 }
 </script>
 <style lang="scss" scoped>
+.imagess {
+  border-radius: 30px;
+  padding: 2px;
+}
 .bxo {
   background-color: white;
   padding-bottom: 30px;

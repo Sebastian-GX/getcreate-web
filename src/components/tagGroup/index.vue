@@ -1,12 +1,8 @@
 <template>
   <div class="tagGroup">
     <el-space :size="10">
-      <div
-        :class="['tag', { active: item.value === tagValue }]"
-        v-for="item in tagList"
-        :key="item.value"
-        @click="handleChangeTag(item)"
-      >{{ item.name }}
+      <div :class="['tag', { active: item.value === tagValue }]" v-for="item in tagList" :key="item.value"
+        @click="handleChangeTag(item)">{{ item.name }}
       </div>
     </el-space>
   </div>
@@ -37,9 +33,14 @@ div.tagGroup {
     font-weight: bold;
     color: #cccccc;
     cursor: pointer;
+    font-size: 17px;
+
     &.active {
       // background: #A19D9D;
       color: #FFFFFF;
+      // text-decoration: underline;
+      // padding-bottom: 2px;
+      /* 设置下划线与文本之间的距离 */
     }
   }
 }

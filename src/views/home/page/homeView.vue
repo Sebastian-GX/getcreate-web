@@ -75,7 +75,7 @@ onMounted(() => {
   window.onresize = () => { setPerWidth() }
 })
 const setPerWidth = () => {
-  let totalWidth = document.getElementById("contentArea").clientWidth;
+  let totalWidth = (document.getElementById("contentArea").clientWidth);
   perWidth = totalWidth / columns;
 }
 const handleChangeColumns = () => {

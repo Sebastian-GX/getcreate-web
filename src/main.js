@@ -47,5 +47,13 @@ app.use( VueSplide );
 app.config.errorHandler = (err) => {
   console.log(err);
 }
+// 懒加载
+import lazyPlugin from 'vue3-lazy'
+app.use(lazyPlugin, {
+    loading: '', // 图片加载时默认图片
+    error: ''// 图片加载失败时默认图片
+  })
+
+
 app.use(router)
 app.mount('#app')

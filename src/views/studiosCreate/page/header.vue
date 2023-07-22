@@ -10,7 +10,7 @@
     <div class="right">
       <el-badge :value="0" class="item">
         <span class="iconfont icon-xiaoxi"></span>
-      </el-badge>
+      </el-badge> 
       <avatar/>
     </div>
   </div>
@@ -27,6 +27,7 @@ const dumpHome = () => {
   router.push({
     name: 'homeView',
   })
+  useMainStore.correct()
 }
 </script>
 <style lang="scss" scoped>
